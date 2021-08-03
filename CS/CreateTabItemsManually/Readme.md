@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Startup.cs](./TabPage_CreateItems/Startup.cs)
+* [MainPage.xaml](./TabPage_CreateItems/MainPage.xaml)
+* [MainPage.xaml.cs](./TabPage_CreateItems/MainPage.xaml.cs)
+<!-- default file list end -->
+
 # Create MAUI Tab Page Items Manually
 
 This lesson explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) component with manually created tab items to implement bottom tab navigation in a .NET MAUI application.
@@ -15,13 +23,13 @@ The following step-by-step instructions describe how to create the same applicat
 ## Create a New MAUI Application and Add a Tab Page
 
 Create a new .NET MAUI solution in Visual Studio 22 Preview.  
-Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
+Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/dotnet/maui/).
 
-Add the DevExpress Tab Page component to your solution as follows: 
-1. Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
-2. Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
+Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
 
-In the *Startup.cs* file, register a handler for the TabPage class:
+Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
+
+In the *Startup.cs* file, register a handler for the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) class:
 
 ```cs
 using Microsoft.Maui;
@@ -68,9 +76,8 @@ namespace TabPage_CreateItems {
 }
 ```
 
-
 ## Create Tab Items
-Add icons for tabs (.svg files) to the project and set their **Build Action** property to **MauiImage**.
+Add icons for tabs ([.svg files](./TabPage_CreateItems/Resources/Images/)) to the project and set their **Build Action** property to **MauiImage**.
 
 Add [TabPageItem](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPageItem) objects to the [TabPage.Items](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage.Items) collection:
 

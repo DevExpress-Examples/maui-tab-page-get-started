@@ -1,3 +1,14 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Startup.cs](./TabPage_GenerateItems/Startup.cs)
+* [MainPage.xaml](./TabPage_GenerateItems/MainPage.xaml)
+* [MainPage.xaml.cs](./TabPage_GenerateItems/MainPage.xaml.cs)
+* [CarModel.cs](./TabPage_GenerateItems/CarModel.cs)
+* [CarBrandViewModel.cs](./TabPage_GenerateItems/CarBrandViewModel.cs)
+* [MainViewModel.cs](./TabPage_GenerateItems/MainViewModel.cs)
+<!-- default file list end -->
+
 # Generate MAUI Tab Page Items from a Data Source
 
 This lesson explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) component with tab items generated from a data source to create a tab bar that allows users to filter lists. 
@@ -17,9 +28,9 @@ The following step-by-step instructions describe how to create the same applicat
 Create a new .NET MAUI solution in Visual Studio 22 Preview.  
 Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/en-gb/dotnet/maui/).
 
-Add the DevExpress Tab Page component to your solution as follows: 
-1. Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
-2. Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
+Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
+
+Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
 In the *Startup.cs* file, register a handler for the TabPage class:
 
@@ -54,7 +65,7 @@ In the *MainPage.xaml* file, use the *dxn* prefix to declare the **DevExpress.Ma
 </dxn:TabPage>
 ```
 
-In the *MainPage.xaml.cs* file, change the MainPage’s base class from ContentPage to TabPage.
+In the *MainPage.xaml.cs* file, change the MainPage’s base class from ContentPage to TabPage:
 
 ```cs
 using DevExpress.Maui.Navigation;
@@ -67,7 +78,6 @@ namespace TabPage_GenerateItems {
     }
 }
 ```
-
 
 ## Create Models and View Models
 
