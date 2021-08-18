@@ -243,9 +243,11 @@ In the *MainPage.xaml* file:
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Label Text="{Binding BrandName}"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
+            <Grid>
+                <Label Text="{Binding BrandName}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+            </Grid>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <dxn:TabPage.ItemTemplate>
@@ -254,7 +256,9 @@ In the *MainPage.xaml* file:
                 <ListView ItemsSource="{Binding CarModels}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextCell Text="{Binding FullName}"/>
+                            <ViewCell>
+                                <Label Padding="5" Text="{Binding FullName}" />
+                            </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
@@ -285,12 +289,12 @@ Specify the minimum and maximum sizes of items, the spacing between them, and it
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Frame Padding="10, 15"
-                   HasShadow="False">
+            <Grid>
                 <Label Text="{Binding BrandName}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"/>
-            </Frame>
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       Padding="5,0"/>
+            </Grid>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
@@ -350,19 +354,21 @@ namespace TabPage_GenerateItems {
     </dxn:TabPage.Resources>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Frame Padding="10, 15"
-                   HasShadow="False"
-                   BackgroundColor="{Binding IsSelected, 
-                                    Converter={StaticResource isSelectedToColorConverter}}">
-                <!-- Other Frame settings -->
-            </Frame>
+            <Grid>
+                <BoxView BackgroundColor="{Binding IsSelected, 
+                                           Converter={StaticResource isSelectedToColorConverter}}"/>
+                <Label HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       Text="{Binding BrandName}"
+                       Padding="5,0"/>
+            </Grid>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
 </dxn:TabPage>
 ```
 
-Configure also the header panel’s shadow, hide the selected item indicator, and specify the frame corner radius, margin and text color for header items:
+Configure also the header panel’s shadow, hide the selected item indicator, and specify the corner radius, margin and text color for header items:
 
 ```xaml
 <dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -381,17 +387,17 @@ Configure also the header panel’s shadow, hide the selected item indicator, an
              IsSelectedItemIndicatorVisible="False">
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Frame Padding="10, 15"
-                   HasShadow="False"
-                   BackgroundColor="{Binding IsSelected, 
-                                    Converter={StaticResource isSelectedToColorConverter}}"
-                   Margin="0,8,0,8"
-                   CornerRadius="25">
-                <Label Text="{Binding BrandName}"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center"
+            <Grid>
+                <BoxView BackgroundColor="{Binding IsSelected, 
+                                           Converter={StaticResource isSelectedToColorConverter}}"
+                         Margin="0,8,0,8"
+                         CornerRadius="25"/>
+                <Label HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"
+                       Text="{Binding BrandName}"
+                       Padding="5,0"
                        TextColor="White"/>
-            </Frame>
+            </Grid>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
