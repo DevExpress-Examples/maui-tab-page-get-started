@@ -1,15 +1,11 @@
-﻿using DevExpress.Maui.Navigation;
-using Microsoft.Maui;
+﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
-using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Hosting;
+using DevExpress.Maui.Navigation;
 
-namespace TabPage_CreateItems
-{
-	public static class MauiProgram
-	{
-		public static MauiApp CreateMauiApp()
-		{
+namespace TabPage_CreateItems {
+	public static class MauiProgram {
+		public static MauiApp CreateMauiApp() {
 			var builder = MauiApp.CreateBuilder();
 			builder
 				.UseMauiApp<App>()
