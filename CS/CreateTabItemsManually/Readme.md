@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Startup.cs](./TabPage_CreateItems/Startup.cs)
+* [MauiProgram.cs](./TabPage_CreateItems/MauiProgram.cs)
 * [MainPage.xaml](./TabPage_CreateItems/MainPage.xaml)
 * [MainPage.xaml.cs](./TabPage_CreateItems/MainPage.xaml.cs)
 <!-- default file list end -->
@@ -29,7 +29,7 @@ Register https://nuget.devexpress.com/free/api as a package source in Visual Stu
 
 Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
-In the *Startup.cs* file, register a handler for the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) class:
+In the *MauiProgram.cs* file, register a handler for the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) class:
 
 ```cs
 using Microsoft.Maui;
@@ -38,15 +38,18 @@ using Microsoft.Maui.Controls.Hosting;
 using DevExpress.Maui.Navigation;
 
 namespace TabPage_CreateItems {
-    public class Startup : IStartup {
-        public void Configure(IAppHostBuilder appBuilder) {
-            appBuilder
-                .ConfigureMauiHandlers((_, handlers) => handlers.AddHandler<TabPage, TabPageHandler>())
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                });
+    public static class MauiProgram {
+        public static MauiApp CreateMauiApp() {
+	    var builder = MauiApp.CreateBuilder();
+                builder
+                    .UseMauiApp<App>()
+                    .ConfigureMauiHandlers((handlers => handlers.AddHandler<TabPage, TabPageHandler>()))
+                    .ConfigureFonts(fonts =>
+                        {
+                            fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                        });
+
+            return builder.Build();
         }
     }
 }
