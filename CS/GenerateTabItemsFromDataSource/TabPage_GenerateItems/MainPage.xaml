@@ -12,21 +12,14 @@
              HeaderPanelShadowHeight="3"
              HeaderPanelShadowRadius="3"
              IsSelectedItemIndicatorVisible="False">
-    <dxn:TabPage.Resources>
-        <ResourceDictionary>
-            <local:IsSelectedToColorConverter x:Key="isSelectedToColorConverter"
-                                              DefaultColor="Transparent"
-                                              SelectedColor="#40FFFFFF"/>
-        </ResourceDictionary>
-    </dxn:TabPage.Resources>
     <dxn:TabPage.BindingContext>
         <local:MainViewModel/>
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
             <Grid>
-                <BoxView BackgroundColor="{Binding IsSelected, 
-                                           Converter={StaticResource isSelectedToColorConverter}}"
+                <BoxView IsVisible="{Binding IsSelected}"
+                         BackgroundColor="#40FFFFFF"
                          Margin="0,8,0,8"
                          CornerRadius="25"/>
                 <Label HorizontalOptions="Center"
