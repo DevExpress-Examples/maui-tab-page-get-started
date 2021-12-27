@@ -6,6 +6,7 @@
 * [MainPage.xaml.cs](./TabPage_GenerateItems/MainPage.xaml.cs)
 * [CarModel.cs](./TabPage_GenerateItems/CarModel.cs)
 * [CarBrandViewModel.cs](./TabPage_GenerateItems/CarBrandViewModel.cs)
+* [BoolToColorConverter.cs](./TabPage_GenerateItems/BoolToColorConverter.cs)
 * [MainViewModel.cs](./TabPage_GenerateItems/MainViewModel.cs)
 <!-- default file list end -->
 
@@ -38,7 +39,7 @@ In the *MauiProgram.cs* file, register a handler for the TabPage class:
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
-using DevExpress.Maui.Navigation;
+using DevExpress.Maui;
 
 namespace TabPage_GenerateItems {
     public static class MauiProgram {
@@ -46,7 +47,7 @@ namespace TabPage_GenerateItems {
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .ConfigureMauiHandlers((handlers => handlers.AddHandler<TabPage, TabPageHandler>()))
+                .UseDevExpress()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -270,6 +271,34 @@ In the *MainPage.xaml* file:
 </dxn:TabPage>
 ```
 
+## Create BoolToColorConverter.cs
+```xaml
+using System;
+using System.ComponentModel;
+using System.Globalization;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+
+namespace TabPage_GenerateItems
+{
+    public class BoolToColorConverter:IValueConverter {
+        public Color FalseSource { get; set; }
+        public Color TrueSource { get; set; }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+            if (!(value is bool)) {
+                return null;
+            }
+            return (bool)value ? TrueSource : FalseSource;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
+            throw new NotImplementedException();
+        }
+    }
+}
+```
+
 ## Customize the Tab Page
 Configure the appearance of the TabPage’s header panel and header items.
 
@@ -305,6 +334,34 @@ Specify the minimum and maximum sizes of items, the spacing between them, and it
 
 Specify the header panel’s background, and assign a color to a header item depending on whether the tab is selected:
 
+## Create BoolToColorConverter.cs
+```xaml
+using System;
+using System.ComponentModel;
+using System.Globalization;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+
+namespace TabPage_GenerateItems
+{
+    public class BoolToColorConverter:IValueConverter {
+        public Color FalseSource { get; set; }
+        public Color TrueSource { get; set; }
+
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
+            if (!(value is bool)) {
+                return null;
+            }
+            return (bool)value ? TrueSource : FalseSource;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
+            throw new NotImplementedException();
+        }
+    }
+}
+```
+
 ```cs
 using System;
 using System.Globalization;
@@ -316,20 +373,6 @@ namespace TabPage_GenerateItems {
     public partial class MainPage : TabPage {
         public MainPage() {
             InitializeComponent();
-        }
-    }
-
-    class IsSelectedToColorConverter : IValueConverter {
-        public Color DefaultColor { get; set; }
-        public Color SelectedColor { get; set; }
-
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            if (!(value is bool boolValue)) return DefaultColor;
-            return (boolValue) ? SelectedColor : DefaultColor;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-            throw new NotImplementedException();
         }
     }
 }
@@ -349,28 +392,29 @@ namespace TabPage_GenerateItems {
              HeaderPanelBackgroundColor="#1e88e5">
     <dxn:TabPage.Resources>
         <ResourceDictionary>
-            <local:IsSelectedToColorConverter x:Key="isSelectedToColorConverter"
+            <local:BoolToColorConverter x:Key="boolToColorConverter"
                                               DefaultColor="Transparent"
                                               SelectedColor="#40FFFFFF"/>
         </ResourceDictionary>
     </dxn:TabPage.Resources>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <BoxView BackgroundColor="{Binding IsSelected, 
-                                           Converter={StaticResource isSelectedToColorConverter}}"/>
-                <Label HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"
-                       Text="{Binding BrandName}"
-                       Padding="5,0"/>
-            </Grid>
+           <Label
+              x:Name="label"
+              Margin="16,48,16,16"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              TextColor="{Binding IsSelected, Converter={StaticResource boolToColorConverter}}"
+              Text="{Binding BrandName}"
+              HorizontalTextAlignment="Center"
+              Padding="5,0"/>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
 </dxn:TabPage>
 ```
 
-Configure also the header panel’s shadow, hide the selected item indicator, and specify the corner radius, margin and text color for header items:
+Configure also the header panel’s shadow, and specify the corner radius, margin and text color for header items:
 
 ```xaml
 <dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -386,20 +430,18 @@ Configure also the header panel’s shadow, hide the selected item indicator, an
              HeaderPanelBackgroundColor="#1e88e5"
              HeaderPanelShadowHeight="3"
              HeaderPanelShadowRadius="3"
-             IsSelectedItemIndicatorVisible="False">
+             IsSelectedItemIndicatorVisible="True">
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <BoxView BackgroundColor="{Binding IsSelected, 
-                                           Converter={StaticResource isSelectedToColorConverter}}"
-                         Margin="0,8,0,8"
-                         CornerRadius="25"/>
-                <Label HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"
-                       Text="{Binding BrandName}"
-                       Padding="5,0"
-                       TextColor="White"/>
-            </Grid>
+           <Label
+              x:Name="label"
+              Margin="16,48,16,16"
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              TextColor="{Binding IsSelected, Converter={StaticResource boolToColorConverter}}"
+              Text="{Binding BrandName}"
+              HorizontalTextAlignment="Center"
+              Padding="5,0"/>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
