@@ -271,34 +271,6 @@ In the *MainPage.xaml* file:
 </dxn:TabPage>
 ```
 
-## Create BoolToColorConverter.cs
-```xaml
-using System;
-using System.ComponentModel;
-using System.Globalization;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
-
-namespace TabPage_GenerateItems
-{
-    public class BoolToColorConverter:IValueConverter {
-        public Color FalseSource { get; set; }
-        public Color TrueSource { get; set; }
-
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture) {
-            if (!(value is bool)) {
-                return null;
-            }
-            return (bool)value ? TrueSource : FalseSource;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
-            throw new NotImplementedException();
-        }
-    }
-}
-```
-
 ## Customize the Tab Page
 Configure the appearance of the TabPage’s header panel and header items.
 
@@ -357,22 +329,6 @@ namespace TabPage_GenerateItems
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) {
             throw new NotImplementedException();
-        }
-    }
-}
-```
-
-```cs
-using System;
-using System.Globalization;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
-using DevExpress.Maui.Navigation;
-
-namespace TabPage_GenerateItems {
-    public partial class MainPage : TabPage {
-        public MainPage() {
-            InitializeComponent();
         }
     }
 }
