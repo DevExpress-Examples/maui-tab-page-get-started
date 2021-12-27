@@ -1,7 +1,7 @@
 ﻿using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
-using DevExpress.Maui.Navigation;
+using DevExpress.Maui;
 
 namespace TabPage_CreateItems {
 	public static class MauiProgram {
@@ -9,7 +9,7 @@ namespace TabPage_CreateItems {
 			var builder = MauiApp.CreateBuilder();
 			builder
 				.UseMauiApp<App>()
-				.ConfigureMauiHandlers((handlers => handlers.AddHandler<TabPage, TabPageHandler>()))
+				.UseDevExpress()
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

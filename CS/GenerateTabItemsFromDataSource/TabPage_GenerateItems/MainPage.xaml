@@ -1,7 +1,7 @@
 <dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:dxn="clr-namespace:DevExpress.Maui.Navigation;assembly=DevExpress.Maui.Navigation"
-             xmlns:local="clr-namespace:TabPage_GenerateItems"
+             xmlns:local="clr-namespace:TabPage_GenerateItems"             
              x:Class="TabPage_GenerateItems.MainPage"
              ItemsSource="{Binding CarModelsByBrand}"
              SelectedItemIndex="{Binding SelectedIndex, Mode=TwoWay}"
@@ -11,23 +11,25 @@
              HeaderPanelBackgroundColor="#1e88e5"
              HeaderPanelShadowHeight="3"
              HeaderPanelShadowRadius="3"
-             IsSelectedItemIndicatorVisible="False">
+             IsSelectedItemIndicatorVisible="True"
+             SelectedItemIndicatorColor="White">
+    <dxn:TabPage.Resources>
+        <local:BoolToColorConverter x:Key="boolToColorConverter" TrueSource="White" FalseSource="#90FFFFFF"/>
+    </dxn:TabPage.Resources>
     <dxn:TabPage.BindingContext>
         <local:MainViewModel/>
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <BoxView IsVisible="{Binding IsSelected}"
-                         BackgroundColor="#40FFFFFF"
-                         Margin="0,8,0,8"
-                         CornerRadius="25"/>
-                <Label HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"
-                       Text="{Binding BrandName}"
-                       Padding="5,0"
-                       TextColor="White"/>
-            </Grid>
+                <Label
+                    x:Name="label"
+                    Margin="16,48,16,16"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="{Binding IsSelected, Converter={StaticResource boolToColorConverter}}"
+                    Text="{Binding BrandName}"
+                    HorizontalTextAlignment="Center"
+                    Padding="5,0"/>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <dxn:TabPage.ItemTemplate>

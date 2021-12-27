@@ -16,7 +16,7 @@
     <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource mail_blue}"
                      SelectedHeaderIconColor="{StaticResource mail_blue}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Mail" IconImageSource="email.svg">
+            <ContentPage Title="Mail" IconImageSource="email">
                 <Label Text="Mail List Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -27,7 +27,7 @@
     <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource calendar_green}"
                      SelectedHeaderIconColor="{StaticResource calendar_green}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Calendar" IconImageSource="calendar.svg">
+            <ContentPage Title="Calendar" IconImageSource="calendar">
                 <Label Text="Calendar Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -38,7 +38,7 @@
     <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource people_red}"
                      SelectedHeaderIconColor="{StaticResource people_red}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="People" IconImageSource="people.svg">
+            <ContentPage Title="People" IconImageSource="people">
                 <Label Text="People Here" 
                         HorizontalOptions="Center" 
                         VerticalOptions="CenterAndExpand"/>
