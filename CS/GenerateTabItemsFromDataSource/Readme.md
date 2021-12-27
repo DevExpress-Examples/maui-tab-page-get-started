@@ -386,7 +386,8 @@ Configure also the header panel’s shadow, and specify the corner radius, margi
              HeaderPanelBackgroundColor="#1e88e5"
              HeaderPanelShadowHeight="3"
              HeaderPanelShadowRadius="3"
-             IsSelectedItemIndicatorVisible="True">
+             IsSelectedItemIndicatorVisible="True"
+	     SelectedItemIndicatorColor="White">
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
            <Label
