@@ -245,11 +245,9 @@ In the *MainPage.xaml* file:
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <Label Text="{Binding BrandName}"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
-            </Grid>
+            <Label Text="{Binding BrandName}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <dxn:TabPage.ItemTemplate>
@@ -291,12 +289,10 @@ Specify the minimum and maximum sizes of items, the spacing between them, and it
     </dxn:TabPage.BindingContext>
     <dxn:TabPage.ItemHeaderTemplate>
         <DataTemplate>
-            <Grid>
-                <Label Text="{Binding BrandName}"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"
-                       Padding="5,0"/>
-            </Grid>
+            <Label Text="{Binding BrandName}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   Padding="5,0"/>
         </DataTemplate>
     </dxn:TabPage.ItemHeaderTemplate>
     <!-- Other Tab Page settings.-->
@@ -367,7 +363,7 @@ namespace TabPage_GenerateItems
 </dxn:TabPage>
 ```
 
-Configure also the header panel’s shadow, and specify the corner radius, margin and text color for header items:
+Configure also the header panel’s shadow, and specify margin and text color for header items:
 
 ```xaml
 <dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
