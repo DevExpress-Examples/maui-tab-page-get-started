@@ -10,11 +10,11 @@
 
 This lesson explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) component with manually created tab items to implement bottom tab navigation in a .NET MAUI application.
 
-1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 22 Preview.
-2. Register the following NuGet feed in Visual Studio: https://nuget.devexpress.com/free/api.  
+1. Install a [.NET MAUI development](https://docs.microsoft.com/en-gb/dotnet/maui/get-started/installation) environment and open the solution in Visual Studio 2022.
+2. Register the following NuGet feed in Visual Studio: `https://nuget.devexpress.com/free/api`.  
 	If you are an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/), this MAUI preview will be available in your personal NuGet feed automatically.
 4. Restore NuGet packages.  
-5. Run the application on an Android device or emulator.  
+5. Run the application on an Android or iOS device or emulator.  
 
 <img src="./img/devexpress-maui-tab-page.png"/>
 
@@ -22,20 +22,19 @@ The following step-by-step instructions describe how to create the same applicat
 
 ## Create a New MAUI Application and Add a Tab Page
 
-Create a new .NET MAUI solution in Visual Studio 22 Preview.  
-Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/dotnet/maui/).
+Create a new .NET MAUI solution in Visual Studio 22 Preview. Refer to the following Microsoft documentation for more information on how to get started with .NET MAUI: [.NET Multi-platform App UI](https://docs.microsoft.com/dotnet/maui/).
 
-Register https://nuget.devexpress.com/free/api as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
+Register `https://nuget.devexpress.com/free/api` as a package source in Visual Studio, if you are not an active DevExpress [Universal](https://www.devexpress.com/subscriptions/universal.xml) customer or have not yet registered our [free Xamarin UI controls](https://www.devexpress.com/xamarin/).
 
 Install the **DevExpress.Maui.Navigation** package from your NuGet feed.
 
-In the *MauiProgram.cs* file, register a handler for the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) class:
+In the *MauiProgram.cs* file, call the **UseDevExpress** method to register handlers for the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage) and other DevExpress controls:
 
 ```cs
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Controls.Hosting;
-using DevExpress.Maui.Navigation;
+using DevExpress.Maui;
 
 namespace TabPage_CreateItems {
     public static class MauiProgram {
@@ -43,7 +42,7 @@ namespace TabPage_CreateItems {
 	    var builder = MauiApp.CreateBuilder();
                 builder
                     .UseMauiApp<App>()
-                    .ConfigureMauiHandlers((handlers => handlers.AddHandler<TabPage, TabPageHandler>()))
+                    .UseDevExpress()
                     .ConfigureFonts(fonts =>
                         {
                             fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -92,7 +91,7 @@ Add [TabPageItem](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.Tab
              x:Class="TabPage_CreateItems.MainPage">
     <dxn:TabPageItem>
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Mail" IconImageSource="email.svg">
+            <ContentPage Title="Mail" IconImageSource="email">
                 <Label Text="Mail List Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -102,7 +101,7 @@ Add [TabPageItem](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.Tab
 
     <dxn:TabPageItem>
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Calendar" IconImageSource="calendar.svg">
+            <ContentPage Title="Calendar" IconImageSource="calendar">
                 <Label Text="Calendar Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -112,7 +111,7 @@ Add [TabPageItem](http://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.Tab
 
     <dxn:TabPageItem>
         <dxn:TabPageItem.Content>
-            <ContentPage Title="People" IconImageSource="people.svg">
+            <ContentPage Title="People" IconImageSource="people">
                 <Label Text="People Here" 
                         HorizontalOptions="Center" 
                         VerticalOptions="CenterAndExpand"/>
@@ -162,7 +161,7 @@ Specify icon and text colors for tabs in the header panel. Use the **ItemHeaderI
     <dxn:TabPageItem SelectedHeaderIconColor="{StaticResource mail_blue}"
                      SelectedHeaderTextColor="{StaticResource mail_blue}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Mail" IconImageSource="email.svg">
+            <ContentPage Title="Mail" IconImageSource="email">
                 <Label Text="Mail List Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -173,7 +172,7 @@ Specify icon and text colors for tabs in the header panel. Use the **ItemHeaderI
     <dxn:TabPageItem SelectedHeaderIconColor="{StaticResource calendar_green}"
                      SelectedHeaderTextColor="{StaticResource calendar_green}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="Calendar" IconImageSource="calendar.svg">
+            <ContentPage Title="Calendar" IconImageSource="calendar">
                 <Label Text="Calendar Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
@@ -184,7 +183,7 @@ Specify icon and text colors for tabs in the header panel. Use the **ItemHeaderI
     <dxn:TabPageItem SelectedHeaderIconColor="{StaticResource people_red}"
                      SelectedHeaderTextColor="{StaticResource people_red}">
         <dxn:TabPageItem.Content>
-            <ContentPage Title="People" IconImageSource="people.svg">
+            <ContentPage Title="People" IconImageSource="people">
                 <Label Text="People Here" 
                        HorizontalOptions="Center" 
                        VerticalOptions="CenterAndExpand"/>
