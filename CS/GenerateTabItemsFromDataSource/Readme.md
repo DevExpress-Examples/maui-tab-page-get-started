@@ -363,7 +363,7 @@ namespace TabPage_GenerateItems
 </dxn:TabPage>
 ```
 
-Configure also the header panel’s shadow, and specify margin and text color for header items:
+Customize the header panel shadow and specify the margins and text color for header items:
 
 ```xaml
 <dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
