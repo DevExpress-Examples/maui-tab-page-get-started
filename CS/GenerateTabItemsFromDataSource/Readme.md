@@ -302,11 +302,9 @@ Specify the minimum and maximum sizes of items, the spacing between them, and it
     <!-- Other Tab Page settings.-->
 </dxn:TabPage>
 ```
+Use the [TabPage.HeaderPanelBackgroundColor](https://docs.devexpress.com/MAUI/DevExpress.Maui.Navigation.TabPage.HeaderPanelBackgroundColor) property to specify the background color of the header panel. The `Label.TextColor` property specifies the color of labels in the panel. We use the following converter to convert a Boolean value in the view model to a `Color` structure.
 
-Specify the header panel’s background, and assign a color to a header item depending on whether the tab is selected:
-
-## Create BoolToColorConverter.cs
-```xaml
+```cs
 using System;
 using System.ComponentModel;
 using System.Globalization;
