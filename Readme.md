@@ -1,9 +1,8 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/392259258/22.1.1%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1018960)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# DevExpress Tab Page for .NET MAUI
+# Tabs for .NET MAUI
 
 [DevExpress Mobile UI](https://www.devexpress.com/maui/) allows you to use a .NET cross-platform UI toolkit and C# to build native apps for iOS and Android.
 
@@ -11,9 +10,11 @@
 
 The **DevExpress Mobile UI for Xamarin.Forms and .NET MAUI** is free of charge. To learn more about our offer and to reserve your copy, visit [Free DevExpress Mobile UI for Xamarin.Forms and .NET MAUI](https://www.devexpress.com/xamarin-free).
 
-## Requirements
+## What's in This Repository
 
-Please register the DevExpress NuGet Gallery in Visual Studio to restore the NuGet packages used in this solution. See the following topic for more information: [Get Started with DevExpress Mobile UI for .NET MAUI](https://docs.devexpress.com/MAUI/403249/get-started).
+In v22.1.1-pre-22115, the **DevExpress Mobile UI for .NET MAUI** suite does not include the `TabPage`, `DrawerPage`, and `DrawerView` components that were supported in previous previews. See the following breaking change for more information: [Navigation controls for .NET MAUI have been removed](https://supportcenter.devexpress.com/internal/ticket/details/T1085745).
+
+This example shows how to replace the `TabPage` with the `TabView` to implement a similar functionality. See the following pull request for changes: [Replace TabPage with TabView](https://github.com/DevExpress-Examples/maui-tab-page-get-started/pull/3/files).
 
 ## Documentation
 
@@ -33,11 +34,4 @@ Please register the DevExpress NuGet Gallery in Visual Studio to restore the NuG
 * [Pie Chart](https://github.com/DevExpress-Examples/maui-pie-chart-get-started)
 * [Scatter Chart](https://github.com/DevExpress-Examples/maui-scatter-chart-get-started)
 * [Tab View](https://github.com/DevExpress-Examples/maui-tab-view-get-started)
-* [Drawer Page](https://github.com/DevExpress-Examples/maui-drawer-page-get-started)
-* [Drawer View](https://github.com/DevExpress-Examples/maui-drawer-view-get-started)
 * [Collection View](https://github.com/DevExpress-Examples/maui-collection-view-get-started)
-
-## What's in This Repository
-
-- [Create Tab Items Manually](./CS/CreateTabItemsManually)  
-- [Generate Tab Items from a Data Source](./CS/GenerateTabItemsFromDataSource)  
