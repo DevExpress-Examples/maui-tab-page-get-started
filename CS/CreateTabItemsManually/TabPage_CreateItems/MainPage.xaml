@@ -1,48 +1,47 @@
-<dxn:TabPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dxn="clr-namespace:DevExpress.Maui.Navigation;assembly=DevExpress.Maui.Navigation"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              xmlns:local="clr-namespace:TabPage_CreateItems"
              x:Class="TabPage_CreateItems.MainPage"
-             HeaderPanelPosition="Bottom"
+             >
+    <ContentPage.Resources>
+        <Color x:Key="mail_blue">#1e88e5</Color>
+        <Color x:Key="calendar_green">#43a047</Color>
+        <Color x:Key="people_red">#e53935</Color>
+    </ContentPage.Resources>
+    <dxc:TabView HeaderPanelPosition="Bottom"
              ItemHeaderWidth="*"
              IsSelectedItemIndicatorVisible="False"
              ItemHeaderTextColor="#757575"
              ItemHeaderIconColor="#757575">
-    <dxn:TabPage.Resources>
-        <Color x:Key="mail_blue">#1e88e5</Color>
-        <Color x:Key="calendar_green">#43a047</Color>
-        <Color x:Key="people_red">#e53935</Color>
-    </dxn:TabPage.Resources>
-    <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource mail_blue}"
-                     SelectedHeaderIconColor="{StaticResource mail_blue}">
-        <dxn:TabPageItem.Content>
-            <ContentPage Title="Mail" IconImageSource="email">
+        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource mail_blue}"
+                     SelectedHeaderIconColor="{StaticResource mail_blue}"
+                     HeaderText="Mail" HeaderIcon="email">
+            <dxc:TabViewItem.Content>
                 <Label Text="Mail List Here" 
-                       HorizontalOptions="Center" 
-                       VerticalOptions="CenterAndExpand"/>
-            </ContentPage>
-        </dxn:TabPageItem.Content>
-    </dxn:TabPageItem>
-
-    <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource calendar_green}"
-                     SelectedHeaderIconColor="{StaticResource calendar_green}">
-        <dxn:TabPageItem.Content>
-            <ContentPage Title="Calendar" IconImageSource="calendar">
-                <Label Text="Calendar Here" 
-                       HorizontalOptions="Center" 
-                       VerticalOptions="CenterAndExpand"/>
-            </ContentPage>
-        </dxn:TabPageItem.Content>
-    </dxn:TabPageItem>
-
-    <dxn:TabPageItem SelectedHeaderTextColor="{StaticResource people_red}"
-                     SelectedHeaderIconColor="{StaticResource people_red}">
-        <dxn:TabPageItem.Content>
-            <ContentPage Title="People" IconImageSource="people">
-                <Label Text="People Here" 
                         HorizontalOptions="Center" 
                         VerticalOptions="CenterAndExpand"/>
-            </ContentPage>
-        </dxn:TabPageItem.Content>
-    </dxn:TabPageItem>
-</dxn:TabPage>
+            </dxc:TabViewItem.Content>
+        </dxc:TabViewItem>
+
+        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource calendar_green}"
+                         SelectedHeaderIconColor="{StaticResource calendar_green}"
+                         HeaderText="Calendar" HeaderIcon="calendar">
+            <dxc:TabViewItem.Content>
+                <Label Text="Calendar Here" 
+                        HorizontalOptions="Center" 
+                        VerticalOptions="CenterAndExpand"/>
+            </dxc:TabViewItem.Content>
+        </dxc:TabViewItem>
+
+        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource people_red}"
+                         SelectedHeaderIconColor="{StaticResource people_red}"
+                         HeaderText="People" HeaderIcon="people">
+            <dxc:TabViewItem.Content>
+                <Label Text="People Here" 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="CenterAndExpand"/>
+            </dxc:TabViewItem.Content>
+        </dxc:TabViewItem>
+    </dxc:TabView>
+</ContentPage>
