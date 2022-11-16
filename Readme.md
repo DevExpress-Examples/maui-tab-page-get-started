@@ -21,13 +21,13 @@ This example shows how to replace the `TabPage` with the `TabView` to implement 
 
 The [CreateTabItemsManually](./CS/CreateTabItemsManually/) project explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.TabPage) component with manually created tab items to implement bottom tab navigation in a .NET MAUI application.
 
-<img src="./img/populate-tab-page.png"/>
+<img src="Images/populate-tab-page.png"/>
 
 ### Generate Items
 
 The [GenerateTabItemsFromDataSource](./CS/GenerateTabItemsFromDataSource/) project explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.TabPage) component with tab items generated from a data source to create a tab bar that allows users to filter lists. 
 
-<img src="./img/generate-tab-page-items.png"/>
+<img src="Images/generate-tab-page-items.png"/>
 
 ## Documentation
 
