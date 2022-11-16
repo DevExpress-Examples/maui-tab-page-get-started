@@ -17,6 +17,18 @@ In v22.1.1-pre-22115, the **DevExpress Mobile UI for .NET MAUI** suite does not 
 
 This example shows how to replace the `TabPage` with the `TabView` to implement a similar functionality. See the following pull request for changes: [Replace TabPage with TabView](https://github.com/DevExpress-Examples/maui-tab-page-get-started/pull/3/files).
 
+### Populate a TabPage Manually
+
+The [CreateTabItemsManually](./CS/CreateTabItemsManually/) project explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.TabPage) component with manually created tab items to implement bottom tab navigation in a .NET MAUI application.
+
+<img src="./img/populate-tab-page.png"/>
+
+### Generate Items
+
+The [GenerateTabItemsFromDataSource](./CS/GenerateTabItemsFromDataSource/) project explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.TabPage) component with tab items generated from a data source to create a tab bar that allows users to filter lists. 
+
+<img src="./img/generate-tab-page-items.png"/>
+
 ## Documentation
 
 - [Data Grid](https://docs.devexpress.com/MAUI/403255/data-grid/data-grid)
