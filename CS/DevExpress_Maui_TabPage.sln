@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31521.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabPage_CreateItems", "CreateTabItemsManually\TabPage_CreateItems\TabPage_CreateItems.csproj", "{4956C3F4-A145-4B65-80DE-7F3E49EC9073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabPage_CreateItems", "CreateTabItemsManually\TabPage_CreateItems.csproj", "{4956C3F4-A145-4B65-80DE-7F3E49EC9073}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabPage_GenerateItems", "GenerateTabItemsFromDataSource\TabPage_GenerateItems\TabPage_GenerateItems.csproj", "{E9A51EC5-1B7C-4058-A9EF-01817C444971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabPage_GenerateItems", "GenerateTabItemsFromDataSource\TabPage_GenerateItems.csproj", "{E9A51EC5-1B7C-4058-A9EF-01817C444971}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
