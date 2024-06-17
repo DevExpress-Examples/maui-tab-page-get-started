@@ -1,6 +1,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+             xmlns:dx="http://schemas.devexpress.com/maui"
              xmlns:local="clr-namespace:TabPage_CreateItems"
              x:Class="TabPage_CreateItems.MainPage"
              >
@@ -9,39 +9,39 @@
         <Color x:Key="calendar_green">#43a047</Color>
         <Color x:Key="people_red">#e53935</Color>
     </ContentPage.Resources>
-    <dxc:TabView HeaderPanelPosition="Bottom"
+    <dx:TabView HeaderPanelPosition="Bottom"
              ItemHeaderWidth="*"
              IsSelectedItemIndicatorVisible="False"
              ItemHeaderTextColor="#757575"
              ItemHeaderIconColor="#757575">
-        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource mail_blue}"
+        <dx:TabViewItem SelectedHeaderTextColor="{StaticResource mail_blue}"
                      SelectedHeaderIconColor="{StaticResource mail_blue}"
                      HeaderText="Mail" HeaderIcon="email">
-            <dxc:TabViewItem.Content>
+            <dx:TabViewItem.Content>
                 <Label Text="Mail List Here" 
                         HorizontalOptions="Center" 
                         VerticalOptions="CenterAndExpand"/>
-            </dxc:TabViewItem.Content>
-        </dxc:TabViewItem>
+            </dx:TabViewItem.Content>
+        </dx:TabViewItem>
 
-        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource calendar_green}"
+        <dx:TabViewItem SelectedHeaderTextColor="{StaticResource calendar_green}"
                          SelectedHeaderIconColor="{StaticResource calendar_green}"
                          HeaderText="Calendar" HeaderIcon="calendar">
-            <dxc:TabViewItem.Content>
+            <dx:TabViewItem.Content>
                 <Label Text="Calendar Here" 
                         HorizontalOptions="Center" 
                         VerticalOptions="CenterAndExpand"/>
-            </dxc:TabViewItem.Content>
-        </dxc:TabViewItem>
+            </dx:TabViewItem.Content>
+        </dx:TabViewItem>
 
-        <dxc:TabViewItem SelectedHeaderTextColor="{StaticResource people_red}"
+        <dx:TabViewItem SelectedHeaderTextColor="{StaticResource people_red}"
                          SelectedHeaderIconColor="{StaticResource people_red}"
                          HeaderText="People" HeaderIcon="people">
-            <dxc:TabViewItem.Content>
+            <dx:TabViewItem.Content>
                 <Label Text="People Here" 
                     HorizontalOptions="Center" 
                     VerticalOptions="CenterAndExpand"/>
-            </dxc:TabViewItem.Content>
-        </dxc:TabViewItem>
-    </dxc:TabView>
+            </dx:TabViewItem.Content>
+        </dx:TabViewItem>
+    </dx:TabView>
 </ContentPage>

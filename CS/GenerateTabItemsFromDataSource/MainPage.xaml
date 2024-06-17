@@ -1,8 +1,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dx="http://schemas.devexpress.com/maui"
              xmlns:local="clr-namespace:TabPage_GenerateItems"             
              x:Class="TabPage_GenerateItems.MainPage"
-             xmlns:dxc="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
              >
     <ContentPage.Resources>
         <local:BoolToColorConverter x:Key="boolToColorConverter" TrueSource="White" FalseSource="#90FFFFFF"/>
@@ -10,7 +10,7 @@
     <ContentPage.BindingContext>
         <local:MainViewModel/>
     </ContentPage.BindingContext>
-    <dxc:TabView ItemsSource="{Binding CarModelsByBrand}"
+    <dx:TabView ItemsSource="{Binding CarModelsByBrand}"
              SelectedItemIndex="{Binding SelectedIndex, Mode=TwoWay}"
              ItemHeaderMinWidth="90"
              ItemHeaderMaxWidth="360"
@@ -20,7 +20,7 @@
              HeaderPanelShadowRadius="3"
              IsSelectedItemIndicatorVisible="True"
              SelectedItemIndicatorColor="White">
-        <dxc:TabView.ItemHeaderTemplate>
+        <dx:TabView.ItemHeaderTemplate>
             <DataTemplate>
                 <Label
                     x:Name="label"
@@ -32,8 +32,8 @@
                     HorizontalTextAlignment="Center"
                     Padding="5,0"/>
             </DataTemplate>
-        </dxc:TabView.ItemHeaderTemplate>
-        <dxc:TabView.ItemTemplate>
+        </dx:TabView.ItemHeaderTemplate>
+        <dx:TabView.ItemTemplate>
             <DataTemplate>
                 
                     <CollectionView ItemsSource="{Binding CarModels}">
@@ -45,6 +45,6 @@
                     </CollectionView>
                 
             </DataTemplate>
-        </dxc:TabView.ItemTemplate>
-    </dxc:TabView>    
+        </dx:TabView.ItemTemplate>
+    </dx:TabView>    
 </ContentPage>

@@ -10,6 +10,7 @@ namespace TabPage_GenerateItems {
 			builder
 				.UseMauiApp<App>()
 				.UseDevExpress()
+				.UseDevExpressControls()
 				.ConfigureFonts(fonts =>
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
