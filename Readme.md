@@ -30,11 +30,15 @@ The [CreateTabItemsManually](./CS/CreateTabItemsManually/) project explains how 
 
 <img src="Images/populate-tab-page.png"/>
 
+<br/>
+
 ### Generate Items
 
 The [GenerateTabItemsFromDataSource](./CS/GenerateTabItemsFromDataSource/) project explains how to use the [TabPage](http://docs.devexpress.com/MAUI/DevExpress.Maui.Controls.TabPage) component with tab items generated from a data source to create a tab bar that allows users to filter lists. 
 
 <img src="Images/generate-tab-page-items.png"/>
+
+<br/>
 
 ## Documentation
 
@@ -46,7 +50,6 @@ The [GenerateTabItemsFromDataSource](./CS/GenerateTabItemsFromDataSource/) proje
 - [Collection View](https://docs.devexpress.com/MAUI/403324/collection-view/index)
 
 ## More Examples
-
 
 * [Stocks App](https://github.com/DevExpress-Examples/maui-stocks-mini)
 * [Data Grid](https://github.com/DevExpress-Examples/maui-data-grid-get-started)
