@@ -20,7 +20,7 @@ You can also refer to the following YouTube video for more information on how to
 
 ## What's in This Repository
 
-In v22.1.1-pre-22115, the **DevExpress Mobile UI for .NET MAUI** suite does not include the `TabPage`, `DrawerPage`, and `DrawerView` components that were supported in previous previews. See the following breaking change for more information: [Navigation controls for .NET MAUI have been removed](https://supportcenter.devexpress.com/internal/ticket/details/T1085745).
+In v22.1.1-pre-22115, the **DevExpress Mobile UI for .NET MAUI** suite does not include the `TabPage`, `DrawerPage`, and `DrawerView` components that were supported in previous previews.
 
 This example shows how to replace the `TabPage` with the `TabView` to implement a similar functionality. See the following pull request for changes: [Replace TabPage with TabView](https://github.com/DevExpress-Examples/maui-tab-page-get-started/pull/3/files).
 
