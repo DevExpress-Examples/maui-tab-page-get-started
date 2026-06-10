@@ -12,12 +12,6 @@
 
 You need a [DevExpress .NET MAUI Subscription](https://www.devexpress.com/maui/) to run the example. To evaluate our controls, you can start a [free 30-day trial](https://docs.devexpress.com/MAUI/404024/get-started/register-nuget-gallery) through the DevExpress NuGet feed.
 
-## Requirements
-
-Please register the DevExpress NuGet Gallery in Visual Studio to restore the NuGet packages used in this solution. See the following topic for more information: [Get Started with DevExpress Mobile UI for .NET MAUI](https://docs.devexpress.com/MAUI/403249/get-started).
-
-You can also refer to the following YouTube video for more information on how to get started with the DevExpress .NET MAUI Controls: [Setting up a .NET MAUI Project](https://www.youtube.com/watch?v=juJvl5UicIQ).
-
 ## What's in This Repository
 
 In v22.1.1-pre-22115, the **DevExpress Mobile UI for .NET MAUI** suite does not include the `TabPage`, `DrawerPage`, and `DrawerView` components that were supported in previous previews. See the following breaking change for more information: [Navigation controls for .NET MAUI have been removed](https://supportcenter.devexpress.com/internal/ticket/details/T1085745).
